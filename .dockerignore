@@ -1,0 +1,15 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pt
+*.db
+*.db-wal
+*.db-shm
+.env
+backups
+exports
+dist
+evidence
+logs
+data/inbox/crawled

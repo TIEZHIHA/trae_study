@@ -1,0 +1,10 @@
+{
+  "id": "26215150425",
+  "name": "王茂麒",
+  "class": "",
+  "scheme": "A",
+  "submitted_at": "2026-11-13T00:00:00+08:00",
+  "repo_url": "",
+  "notes": "Docker 未在本机安装，容器相关项未现场验证；存储层用 SQLite 单文件替代 MongoDB + Neo4j，链路与判据保持一致。",
+  "integrity_hash": ""
+}

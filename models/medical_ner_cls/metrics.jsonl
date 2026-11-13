@@ -1,0 +1,33 @@
+{"stage": "ner", "epoch": 1, "loss": 17.1741, "f1": 0.9994, "precision": 0.9988, "recall": 1.0}
+{"stage": "ner", "epoch": 2, "loss": 0.13, "f1": 0.9994, "precision": 0.9988, "recall": 1.0}
+{"stage": "ner", "epoch": 3, "loss": 0.0552, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 4, "loss": 0.0274, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 5, "loss": 0.0156, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 6, "loss": 0.012, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 7, "loss": 0.0101, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 8, "loss": 0.0073, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 9, "loss": 0.0246, "f1": 0.9981, "precision": 0.9963, "recall": 1.0}
+{"stage": "ner", "epoch": 10, "loss": 0.0077, "f1": 0.9994, "precision": 0.9988, "recall": 1.0}
+{"stage": "ner", "epoch": 11, "loss": 0.0047, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 12, "loss": 0.0041, "f1": 0.9994, "precision": 0.9988, "recall": 1.0}
+{"stage": "ner", "epoch": 13, "loss": 0.0034, "f1": 0.9981, "precision": 0.9963, "recall": 1.0}
+{"stage": "ner", "epoch": 14, "loss": 0.0024, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 15, "loss": 0.0021, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 16, "loss": 0.0017, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 17, "loss": 0.0016, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "ner", "epoch": 18, "loss": 0.0014, "f1": 1.0, "precision": 1.0, "recall": 1.0}
+{"stage": "intent", "epoch": 1, "loss": 21.3425, "acc": 0.8667}
+{"stage": "intent", "epoch": 2, "loss": 5.0199, "acc": 0.9067}
+{"stage": "intent", "epoch": 3, "loss": 1.452, "acc": 0.92}
+{"stage": "intent", "epoch": 4, "loss": 0.6374, "acc": 0.92}
+{"stage": "intent", "epoch": 5, "loss": 0.3856, "acc": 0.92}
+{"stage": "intent", "epoch": 6, "loss": 0.32, "acc": 0.92}
+{"stage": "intent", "epoch": 7, "loss": 0.1856, "acc": 0.92}
+{"stage": "intent", "epoch": 8, "loss": 0.1576, "acc": 0.92}
+{"stage": "intent", "epoch": 9, "loss": 0.1056, "acc": 0.92}
+{"stage": "intent", "epoch": 10, "loss": 0.0905, "acc": 0.92}
+{"stage": "intent", "epoch": 11, "loss": 0.0743, "acc": 0.92}
+{"stage": "intent", "epoch": 12, "loss": 0.0578, "acc": 0.92}
+{"stage": "intent", "epoch": 13, "loss": 0.0555, "acc": 0.92}
+{"stage": "intent", "epoch": 14, "loss": 0.0476, "acc": 0.92}
+{"stage": "intent", "epoch": 15, "loss": 0.0489, "acc": 0.92}

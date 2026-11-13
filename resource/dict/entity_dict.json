@@ -1,0 +1,546 @@
+{
+ "2型糖尿病": {
+  "label": "Disease",
+  "canonical": "2型糖尿病"
+ },
+ "II型糖尿病": {
+  "label": "Disease",
+  "canonical": "2型糖尿病"
+ },
+ "二型糖尿病": {
+  "label": "Disease",
+  "canonical": "2型糖尿病"
+ },
+ "二甲双胍": {
+  "label": "Drug",
+  "canonical": "二甲双胍"
+ },
+ "格列美脲": {
+  "label": "Drug",
+  "canonical": "格列美脲"
+ },
+ "阿卡波糖": {
+  "label": "Drug",
+  "canonical": "阿卡波糖"
+ },
+ "西格列汀": {
+  "label": "Drug",
+  "canonical": "西格列汀"
+ },
+ "多饮": {
+  "label": "Symptom",
+  "canonical": "多饮"
+ },
+ "多尿": {
+  "label": "Symptom",
+  "canonical": "多尿"
+ },
+ "多食": {
+  "label": "Symptom",
+  "canonical": "多食"
+ },
+ "体重下降": {
+  "label": "Symptom",
+  "canonical": "体重下降"
+ },
+ "乏力": {
+  "label": "Symptom",
+  "canonical": "乏力"
+ },
+ "视物模糊": {
+  "label": "Symptom",
+  "canonical": "视物模糊"
+ },
+ "伤口愈合慢": {
+  "label": "Symptom",
+  "canonical": "伤口愈合慢"
+ },
+ "空腹血糖": {
+  "label": "Check",
+  "canonical": "空腹血糖"
+ },
+ "餐后2小时血糖": {
+  "label": "Check",
+  "canonical": "餐后2小时血糖"
+ },
+ "糖化血红蛋白": {
+  "label": "Check",
+  "canonical": "糖化血红蛋白"
+ },
+ "口服葡萄糖耐量试验": {
+  "label": "Check",
+  "canonical": "口服葡萄糖耐量试验"
+ },
+ "尿微量白蛋白": {
+  "label": "Check",
+  "canonical": "尿微量白蛋白"
+ },
+ "控制总热量": {
+  "label": "Prevent",
+  "canonical": "控制总热量"
+ },
+ "减少精制糖摄入": {
+  "label": "Prevent",
+  "canonical": "减少精制糖摄入"
+ },
+ "每周有氧运动": {
+  "label": "Prevent",
+  "canonical": "每周有氧运动"
+ },
+ "控制体重": {
+  "label": "Prevent",
+  "canonical": "控制体重"
+ },
+ "定期监测血糖": {
+  "label": "Prevent",
+  "canonical": "定期监测血糖"
+ },
+ "失眠": {
+  "label": "Disease",
+  "canonical": "失眠"
+ },
+ "不寐": {
+  "label": "Disease",
+  "canonical": "失眠"
+ },
+ "枣仁安神胶囊": {
+  "label": "Drug",
+  "canonical": "枣仁安神胶囊"
+ },
+ "乌灵胶囊": {
+  "label": "Drug",
+  "canonical": "乌灵胶囊"
+ },
+ "入睡困难": {
+  "label": "Symptom",
+  "canonical": "入睡困难"
+ },
+ "睡眠浅": {
+  "label": "Symptom",
+  "canonical": "睡眠浅"
+ },
+ "易醒": {
+  "label": "Symptom",
+  "canonical": "易醒"
+ },
+ "早醒": {
+  "label": "Symptom",
+  "canonical": "早醒"
+ },
+ "日间疲乏": {
+  "label": "Symptom",
+  "canonical": "日间疲乏"
+ },
+ "注意力下降": {
+  "label": "Symptom",
+  "canonical": "注意力下降"
+ },
+ "睡眠日记": {
+  "label": "Check",
+  "canonical": "睡眠日记"
+ },
+ "多导睡眠监测": {
+  "label": "Check",
+  "canonical": "多导睡眠监测"
+ },
+ "甲状腺功能": {
+  "label": "Check",
+  "canonical": "甲状腺功能"
+ },
+ "焦虑抑郁量表": {
+  "label": "Check",
+  "canonical": "焦虑抑郁量表"
+ },
+ "固定作息时间": {
+  "label": "Prevent",
+  "canonical": "固定作息时间"
+ },
+ "睡前减少屏幕使用": {
+  "label": "Prevent",
+  "canonical": "睡前减少屏幕使用"
+ },
+ "午后避免咖啡因": {
+  "label": "Prevent",
+  "canonical": "午后避免咖啡因"
+ },
+ "适度运动": {
+  "label": "Prevent",
+  "canonical": "适度运动"
+ },
+ "保持睡眠环境安静": {
+  "label": "Prevent",
+  "canonical": "保持睡眠环境安静"
+ },
+ "急性胃炎": {
+  "label": "Disease",
+  "canonical": "急性胃炎"
+ },
+ "急性单纯性胃炎": {
+  "label": "Disease",
+  "canonical": "急性胃炎"
+ },
+ "奥美拉唑": {
+  "label": "Drug",
+  "canonical": "奥美拉唑"
+ },
+ "铝碳酸镁": {
+  "label": "Drug",
+  "canonical": "铝碳酸镁"
+ },
+ "蒙脱石散": {
+  "label": "Drug",
+  "canonical": "蒙脱石散"
+ },
+ "上腹痛": {
+  "label": "Symptom",
+  "canonical": "上腹痛"
+ },
+ "恶心": {
+  "label": "Symptom",
+  "canonical": "恶心"
+ },
+ "呕吐": {
+  "label": "Symptom",
+  "canonical": "呕吐"
+ },
+ "食欲不振": {
+  "label": "Symptom",
+  "canonical": "食欲不振"
+ },
+ "腹胀": {
+  "label": "Symptom",
+  "canonical": "腹胀"
+ },
+ "嗳气": {
+  "label": "Symptom",
+  "canonical": "嗳气"
+ },
+ "规律饮食": {
+  "label": "Prevent",
+  "canonical": "规律饮食"
+ },
+ "避免刺激性食物": {
+  "label": "Prevent",
+  "canonical": "避免刺激性食物"
+ },
+ "戒烟限酒": {
+  "label": "Prevent",
+  "canonical": "戒烟限酒"
+ },
+ "慎用损伤胃黏膜的药物": {
+  "label": "Prevent",
+  "canonical": "慎用损伤胃黏膜的药物"
+ },
+ "风寒感冒": {
+  "label": "Disease",
+  "canonical": "风寒感冒"
+ },
+ "风寒型感冒": {
+  "label": "Disease",
+  "canonical": "风寒感冒"
+ },
+ "感冒清热颗粒": {
+  "label": "Drug",
+  "canonical": "感冒清热颗粒"
+ },
+ "正柴胡饮颗粒": {
+  "label": "Drug",
+  "canonical": "正柴胡饮颗粒"
+ },
+ "风寒感冒颗粒": {
+  "label": "Drug",
+  "canonical": "风寒感冒颗粒"
+ },
+ "恶寒重": {
+  "label": "Symptom",
+  "canonical": "恶寒重"
+ },
+ "发热轻": {
+  "label": "Symptom",
+  "canonical": "发热轻"
+ },
+ "无汗": {
+  "label": "Symptom",
+  "canonical": "无汗"
+ },
+ "头痛身痛": {
+  "label": "Symptom",
+  "canonical": "头痛身痛"
+ },
+ "鼻塞流清涕": {
+  "label": "Symptom",
+  "canonical": "鼻塞流清涕"
+ },
+ "咳嗽吐稀白痰": {
+  "label": "Symptom",
+  "canonical": "咳嗽吐稀白痰"
+ },
+ "口不渴": {
+  "label": "Symptom",
+  "canonical": "口不渴"
+ },
+ "血常规": {
+  "label": "Check",
+  "canonical": "血常规"
+ },
+ "C反应蛋白": {
+  "label": "Check",
+  "canonical": "C反应蛋白"
+ },
+ "注意保暖": {
+  "label": "Prevent",
+  "canonical": "注意保暖"
+ },
+ "避免受凉": {
+  "label": "Prevent",
+  "canonical": "避免受凉"
+ },
+ "热水泡脚": {
+  "label": "Prevent",
+  "canonical": "热水泡脚"
+ },
+ "适量饮用姜汤": {
+  "label": "Prevent",
+  "canonical": "适量饮用姜汤"
+ },
+ "规律作息": {
+  "label": "Prevent",
+  "canonical": "规律作息"
+ },
+ "风热感冒": {
+  "label": "Disease",
+  "canonical": "风热感冒"
+ },
+ "风热型感冒": {
+  "label": "Disease",
+  "canonical": "风热感冒"
+ },
+ "热感冒": {
+  "label": "Disease",
+  "canonical": "风热感冒"
+ },
+ "银翘解毒片": {
+  "label": "Drug",
+  "canonical": "银翘解毒片"
+ },
+ "桑菊感冒片": {
+  "label": "Drug",
+  "canonical": "桑菊感冒片"
+ },
+ "板蓝根颗粒": {
+  "label": "Drug",
+  "canonical": "板蓝根颗粒"
+ },
+ "双黄连口服液": {
+  "label": "Drug",
+  "canonical": "双黄连口服液"
+ },
+ "发热重": {
+  "label": "Symptom",
+  "canonical": "发热重"
+ },
+ "微恶风": {
+  "label": "Symptom",
+  "canonical": "微恶风"
+ },
+ "头胀痛": {
+  "label": "Symptom",
+  "canonical": "头胀痛"
+ },
+ "咽喉红肿疼痛": {
+  "label": "Symptom",
+  "canonical": "咽喉红肿疼痛"
+ },
+ "咳嗽": {
+  "label": "Symptom",
+  "canonical": "咳嗽"
+ },
+ "痰黏或黄": {
+  "label": "Symptom",
+  "canonical": "痰黏或黄"
+ },
+ "鼻塞黄涕": {
+  "label": "Symptom",
+  "canonical": "鼻塞黄涕"
+ },
+ "口渴喜饮": {
+  "label": "Symptom",
+  "canonical": "口渴喜饮"
+ },
+ "咽拭子培养": {
+  "label": "Check",
+  "canonical": "咽拭子培养"
+ },
+ "多饮温水": {
+  "label": "Prevent",
+  "canonical": "多饮温水"
+ },
+ "饮食清淡": {
+  "label": "Prevent",
+  "canonical": "饮食清淡"
+ },
+ "少吃辛辣油腻": {
+  "label": "Prevent",
+  "canonical": "少吃辛辣油腻"
+ },
+ "保证充足休息": {
+  "label": "Prevent",
+  "canonical": "保证充足休息"
+ },
+ "保持室内通风": {
+  "label": "Prevent",
+  "canonical": "保持室内通风"
+ },
+ "流感高发季戴口罩": {
+  "label": "Prevent",
+  "canonical": "流感高发季戴口罩"
+ },
+ "高血压": {
+  "label": "Disease",
+  "canonical": "高血压"
+ },
+ "高血压病": {
+  "label": "Disease",
+  "canonical": "高血压"
+ },
+ "原发性高血压": {
+  "label": "Disease",
+  "canonical": "高血压"
+ },
+ "氨氯地平": {
+  "label": "Drug",
+  "canonical": "氨氯地平"
+ },
+ "缬沙坦": {
+  "label": "Drug",
+  "canonical": "缬沙坦"
+ },
+ "美托洛尔": {
+  "label": "Drug",
+  "canonical": "美托洛尔"
+ },
+ "氢氯噻嗪": {
+  "label": "Drug",
+  "canonical": "氢氯噻嗪"
+ },
+ "头晕": {
+  "label": "Symptom",
+  "canonical": "头晕"
+ },
+ "头痛": {
+  "label": "Symptom",
+  "canonical": "头痛"
+ },
+ "颈项板紧": {
+  "label": "Symptom",
+  "canonical": "颈项板紧"
+ },
+ "疲劳": {
+  "label": "Symptom",
+  "canonical": "疲劳"
+ },
+ "心悸": {
+  "label": "Symptom",
+  "canonical": "心悸"
+ },
+ "血压测量": {
+  "label": "Check",
+  "canonical": "血压测量"
+ },
+ "动态血压监测": {
+  "label": "Check",
+  "canonical": "动态血压监测"
+ },
+ "血生化": {
+  "label": "Check",
+  "canonical": "血生化"
+ },
+ "心电图": {
+  "label": "Check",
+  "canonical": "心电图"
+ },
+ "超声心动图": {
+  "label": "Check",
+  "canonical": "超声心动图"
+ },
+ "尿常规": {
+  "label": "Check",
+  "canonical": "尿常规"
+ },
+ "低盐饮食": {
+  "label": "Prevent",
+  "canonical": "低盐饮食"
+ },
+ "规律运动": {
+  "label": "Prevent",
+  "canonical": "规律运动"
+ },
+ "保持情绪稳定": {
+  "label": "Prevent",
+  "canonical": "保持情绪稳定"
+ },
+ "定期监测血压": {
+  "label": "Prevent",
+  "canonical": "定期监测血压"
+ },
+ "偏头痛": {
+  "label": "Disease",
+  "canonical": "偏头痛"
+ },
+ "血管性头痛": {
+  "label": "Disease",
+  "canonical": "偏头痛"
+ },
+ "布洛芬": {
+  "label": "Drug",
+  "canonical": "布洛芬"
+ },
+ "对乙酰氨基酚": {
+  "label": "Drug",
+  "canonical": "对乙酰氨基酚"
+ },
+ "佐米曲普坦": {
+  "label": "Drug",
+  "canonical": "佐米曲普坦"
+ },
+ "单侧搏动性头痛": {
+  "label": "Symptom",
+  "canonical": "单侧搏动性头痛"
+ },
+ "畏光": {
+  "label": "Symptom",
+  "canonical": "畏光"
+ },
+ "畏声": {
+  "label": "Symptom",
+  "canonical": "畏声"
+ },
+ "活动后加重": {
+  "label": "Symptom",
+  "canonical": "活动后加重"
+ },
+ "神经系统查体": {
+  "label": "Check",
+  "canonical": "神经系统查体"
+ },
+ "头颅CT": {
+  "label": "Check",
+  "canonical": "头颅CT"
+ },
+ "头颅磁共振": {
+  "label": "Check",
+  "canonical": "头颅磁共振"
+ },
+ "避免熬夜": {
+  "label": "Prevent",
+  "canonical": "避免熬夜"
+ },
+ "减少红酒与奶酪摄入": {
+  "label": "Prevent",
+  "canonical": "减少红酒与奶酪摄入"
+ },
+ "记录头痛日记": {
+  "label": "Prevent",
+  "canonical": "记录头痛日记"
+ }
+}

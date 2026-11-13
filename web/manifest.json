@@ -1,0 +1,21 @@
+{
+  "name": "医药知识图谱问答系统",
+  "short_name": "医药问答",
+  "description": "基于数据挖掘与知识图谱的医药问答演示系统",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef2f8",
+  "theme_color": "#185FA5",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "网页演示", "url": "/" },
+    { "name": "移动端", "url": "/mobile" }
+  ]
+}

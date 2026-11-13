@@ -1,0 +1,44 @@
+services:
+  app:
+    build: .
+    image: medqa:1.0.0
+    container_name: medqa_app
+    ports:
+      - "8000:8000"
+    environment:
+      MEDQA_DB_PATH: /data/medqa.db
+      MEDQA_HOST: 0.0.0.0
+      MEDQA_PORT: "8000"
+      KB_SYNC_INTERVAL_MIN: "10"
+      KB_REQUIRE_REVIEW: "false"
+      ENABLE_MODEL: "true"
+    volumes:
+      - medqa-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+    restart: unless-stopped
+
+  backup:
+    build: .
+    image: medqa:1.0.0
+    container_name: medqa_backup
+    command: ["python", "-m", "backup.daemon"]
+    environment:
+      MEDQA_DB_PATH: /data/medqa.db
+      BACKUP_CRON_HOUR: "3"
+      BACKUP_DRY_RUN: "true"
+      GITHUB_REPO_URL: ${GITHUB_REPO_URL:-}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+    volumes:
+      - medqa-data:/data
+      - ./backups:/app/backups
+    depends_on:
+      app:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  medqa-data:

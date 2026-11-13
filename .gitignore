@@ -1,0 +1,14 @@
+# 凭据与本地产物不入库
+.env
+.env.local
+*.pt
+*.db
+*.db-wal
+*.db-shm
+backups/
+exports/
+__pycache__/
+*.pyc
+dist/
+logs/server.log
+.server.pid

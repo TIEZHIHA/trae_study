@@ -1,0 +1,7 @@
+备份时间: 2026-11-13 17:05:14
+状态: dry_run
+文件数: 59
+敏感命中: 0
+产物: backup-20261113-170514.tar.gz
+快照: {"question_bank": 27, "nodes": 126, "edges": 126}
+DRY_RUN: True

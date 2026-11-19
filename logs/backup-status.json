@@ -1,6 +1,6 @@
 {
-  "time": "2026-11-13 17:05:14",
-  "files": 59,
+  "time": "2026-11-19 16:12:30",
+  "files": 62,
   "snapshot": {
     "question_bank": 27,
     "nodes": 126,
@@ -9,6 +9,6 @@
   "hits": 0,
   "hit_details": [],
   "dry_run": true,
-  "package": "backup-20261113-170514.tar.gz",
+  "package": "backup-20261119-161230.tar.gz",
   "status": "dry_run"
 }

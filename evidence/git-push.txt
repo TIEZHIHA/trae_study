@@ -1,0 +1,26 @@
+GitHub 推送记录
+================
+时间        : 2026-11-19
+仓库        : https://github.com/TIEZHIHA/trae_study （私有）
+分支        : main
+远程        : origin  https://github.com/TIEZHIHA/trae_study.git
+凭据        : Git Credential Manager（file:E:/Git/etc/gitconfig, helper=manager）
+
+推送命令
+--------
+$ git push -u origin main
+To https://github.com/TIEZHIHA/trae_study.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+提交历史（本地与远程一致）
+--------------------------
+e272d7c logs/build-graph.log, logs/kb-sync.log
+6a5c85d chore: 回填 GitHub 仓库地址
+a46a9c1 chore: 忽略 .github_token
+aee2947 feat: 医药知识图谱问答系统 v1.0（方案 A）
+
+说明
+----
+- 私有仓库无法匿名访问校验，本记录基于本机 git 认证会话时的 push 输出与 ls-remote 结果。
+- 网络侧曾出现 HTTPS 连接重置，最终通过 Git Credential Manager（GCM）缓存的凭据完成推送。

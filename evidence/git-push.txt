@@ -15,10 +15,18 @@ branch 'main' set up to track 'origin/main'.
 
 提交历史（本地与远程一致）
 --------------------------
-e272d7c logs/build-graph.log, logs/kb-sync.log
+be39ff2 chore: 更新建图与同步日志
+6e138e6 docs: 记录 GitHub 推送与远程校验
+a994075 chore: 更新自检台账与推送证据
 6a5c85d chore: 回填 GitHub 仓库地址
 a46a9c1 chore: 忽略 .github_token
 aee2947 feat: 医药知识图谱问答系统 v1.0（方案 A）
+
+历史清理
+--------
+原提交 e272d7c 的提交信息为误粘贴的 git remote 输出，内容仅两个日志文件。
+已重写为 be39ff2（提交信息 “chore: 更新建图与同步日志”），
+重写前的分支保存在本地 backup/pre-reword，未推送到远程。
 
 说明
 ----

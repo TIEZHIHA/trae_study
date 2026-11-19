@@ -1,0 +1,229 @@
+﻿docker : --progress is a global compose flag, better use `docker compose --progress xx build ...
+所在位置 行:16 字符: 1
++ docker compose build --progress plain 2>&1 | Tee-Object -FilePath "ev ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (--progress is a...ss xx build ...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ Image medqa:1.0.0 Building 
+ Image medqa:1.0.0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 900B 0.1s done
+#1 DONE 0.1s
+
+#2 [backup internal] load build definition from Dockerfile
+#2 transferring dockerfile: 966B 0.0s done
+#2 DONE 0.0s
+
+#3 [app internal] load metadata for docker.io/library/python:3.11-slim
+#3 DONE 3.5s
+
+#4 [backup internal] load .dockerignore
+#4 transferring context: 161B done
+#4 DONE 0.0s
+
+#5 [app internal] load build context
+#5 transferring context: 4.91kB 0.0s done
+#5 DONE 0.0s
+
+#6 [backup 1/5] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#6 resolve docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 0.0s done
+#6 DONE 0.0s
+
+#7 [app 2/5] WORKDIR /app
+#7 CACHED
+
+#8 [app 3/5] COPY requirements.txt .
+#8 CACHED
+
+#9 [app 4/5] RUN pip install --no-cache-dir "torch==2.6.0+cpu"         --find-links https://mirrors.aliyun.com/pytorch-wheels/cpu  && pip install --no-cache-dir -r requirements.txt
+#9 2.864 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple, https://mirrors.aliyun.com/pytorch-wheels/cpu
+#9 2.864 Looking in links: https://mirrors.aliyun.com/pytorch-wheels/cpu
+#9 31.69 Collecting torch==2.6.0+cpu
+#9 31.90   Downloading https://mirrors.aliyun.com/pytorch-wheels/cpu/torch-2.6.0%2Bcpu-cp311-cp311-linux_x86_64.whl (178.7 MB)
+#9 ...
+
+#6 [app 1/5] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#6 CACHED
+
+#6 [backup 1/5] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#6 CACHED
+
+#9 [app 4/5] RUN pip install --no-cache-dir "torch==2.6.0+cpu"         --find-links https://mirrors.aliyun.com/pytorch-wheels/cpu  && pip install --no-cache-dir -r requirements.txt
+#9 1053.4      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.7/178.7 MB 182.2 kB/s eta 0:00:00
+#9 1061.7 Collecting filelock (from torch==2.6.0+cpu)
+#9 1061.7   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8a/c9/eb6b6528c7edb958d4c24ac47a8b94113d9de36e4cfc6eecd599b1a4f349/filelock-4.2.12-py3-none-any.whl (222 kB)
+#9 1062.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 222.4/222.4 kB 455.4 kB/s eta 0:00:00
+#9 1069.8 Collecting typing-extensions>=4.10.0 (from torch==2.6.0+cpu)
+#9 1070.0   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 1070.3      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 127.8 kB/s eta 0:00:00
+#9 1078.0 Collecting networkx (from torch==2.6.0+cpu)
+#9 1078.1   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl (2.1 MB)
+#9 1082.3      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 499.1 kB/s eta 0:00:00
+#9 1089.3 Collecting jinja2 (from torch==2.6.0+cpu)
+#9 1089.4   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 1089.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 657.8 kB/s eta 0:00:00
+#9 1098.3 Collecting fsspec (from torch==2.6.0+cpu)
+#9 1098.6   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/6c/c0/a98505f18594f1bce828bb159cec0fcf9860562f1a2c85913409fc8f3d9e/fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#9 1098.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 221.7/221.7 kB 1.0 MB/s eta 0:00:00
+#9 1107.2 Collecting sympy==1.13.1 (from torch==2.6.0+cpu)
+#9 1107.3   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/b2/fe/81695a1aa331a842b582453b605175f419fe8540355886031328089d840a/sympy-1.13.1-py3-none-any.whl (6.2 MB)
+#9 1128.3      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 294.5 kB/s eta 0:00:00
+#9 1135.5 Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch==2.6.0+cpu)
+#9 1135.7   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl (536 kB)
+#9 1137.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 240.1 kB/s eta 0:00:00
+#9 1147.0 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.6.0+cpu)
+#9 1147.4   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/81/a5/a513b76c139a3915b43404324e55c0b7979ae4f0d39eb6f075b0282e90a8/markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#9 1147.9 Installing collected packages: mpmath, typing-extensions, sympy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+#9 1172.5 Successfully installed MarkupSafe-3.0.4 filelock-4.2.12 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 sympy-1.13.1 torch-2.6.0+cpu typing-extensions-4.16.0
+#9 1172.5 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 1185.5 
+#9 1185.5 [notice] A new release of pip is available: 24.0 -> 26.3
+#9 1185.5 [notice] To update, run: pip install --upgrade pip
+#9 1186.8 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple, https://mirrors.aliyun.com/pytorch-wheels/cpu
+#9 1209.4 Collecting fastapi>=0.110 (from -r requirements.txt (line 3))
+#9 1209.5   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/c4/c1/3b74c030262a1b38b1fee180f80b4007bbc11c9ac12028cb18c7bcecaec9/fastapi-0.165.0-py3-none-any.whl (159 kB)
+#9 1209.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.5/159.5 kB 410.3 kB/s eta 0:00:00
+#9 1216.0 Collecting uvicorn>=0.29 (from -r requirements.txt (line 4))
+#9 1216.1   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/38/0c/b54a4fdd7f90a3af8b02ebc9ce6712c2c208b7926a2f7bad95c33ebbe943/uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#9 1216.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.4/87.4 kB 565.9 kB/s eta 0:00:00
+#9 1221.9 Collecting requests>=2.31 (from -r requirements.txt (line 5))
+#9 1222.1   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl (73 kB)
+#9 1222.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 634.6 kB/s eta 0:00:00
+#9 1226.4 Collecting watchdog>=4.0 (from -r requirements.txt (line 6))
+#9 1226.5   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/bb/28/96130c970c236e4278a188cb6b8dec2500ff395ddcebb74c6171f5fc6069/watchdog-7.1.0-py3-none-manylinux_2_17_x86_64.whl (103 kB)
+#9 1227.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.3/103.3 kB 91.5 kB/s eta 0:00:00
+#9 1227.5 Requirement already satisfied: torch>=2.0 in /usr/local/lib/python3.11/site-packages (from -r requirements.txt (line 7)) (2.6.0+cpu)
+#9 1232.2 Collecting matplotlib>=3.8 (from -r requirements.txt (line 8))
+#9 1232.3   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2e/a4/1ca765c63a60e3096ae2ad132eb25f6f7eab0377418cd0472808befd9665/matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+#9 1239.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 1.4 MB/s eta 0:00:00
+#9 1245.2 Collecting numpy>=1.26 (from -r requirements.txt (line 9))
+#9 1245.4   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/02/03/74fe2a4cb3817d94d86402f2506554130a2f01414e299b5a843e5a8a957f/numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+#9 1302.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 212.3 kB/s eta 0:00:00
+#9 1307.2 Collecting starlette>=1.6.0 (from fastapi>=0.110->-r requirements.txt (line 3))
+#9 1307.3   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/88/2e/947cfe02def9371c07cd5bf5b6b61c829e9aecb9904db02a66cfafbc1eec/starlette-1.10.0-py3-none-any.whl (80 kB)
+#9 1307.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.6/80.6 kB 306.4 kB/s eta 0:00:00
+#9 1311.9 Collecting anyio>=4.1.0 (from fastapi>=0.110->-r requirements.txt (line 3))
+#9 1312.1   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a9/16/7757fb84c819accc7d7e9af5291b261e4abb8627ee040f99e7d35ef2457a/anyio-4.16.0-py3-none-any.whl (134 kB)
+#9 1312.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 191.4 kB/s eta 0:00:00
+#9 1320.1 Collecting pydantic>=2.9.0 (from fastapi>=0.110->-r requirements.txt (line 3))
+#9 1320.2   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/72/b8/b864503789ef5c58597d2a7b4adbee62c26440ab1e682581fc6838df8947/pydantic-2.14.3-py3-none-any.whl (494 kB)
+#9 1321.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 494.1/494.1 kB 364.2 kB/s eta 0:00:00
+#9 1321.5 Requirement already satisfied: typing-extensions>=4.8.0 in /usr/local/lib/python3.11/site-packages (from fastapi>=0.110->-r requirements.txt (line 3)) (4.16.0)
+#9 1325.6 Collecting typing-inspection>=0.4.2 (from fastapi>=0.110->-r requirements.txt (line 3))
+#9 1325.8   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/de/0c/ea2544850a7c135e15033a5c7a8e7211136184b7ae63e2239d557c2b3019/typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#9 1330.8 Collecting annotated-doc>=0.0.2 (from fastapi>=0.110->-r requirements.txt (line 3))
+#9 1331.3   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5e/b1/9530d6bee606979d54501adcc767d958a38929827f11a524b0d93429d2ad/annotated_doc-0.0.7-py3-none-any.whl (5.3 kB)
+#9 1337.3 Collecting opentelemetry-api>=1.44.0 (from fastapi>=0.110->-r requirements.txt (line 3))
+#9 1337.4   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a9/2d/610db864d7513158cebb8f36cc88e67e73bd6c7aa1905ef18d89e1281c81/opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#9 1337.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 275.1 kB/s eta 0:00:00
+#9 1343.1 Collecting click>=7.0 (from uvicorn>=0.29->-r requirements.txt (line 4))
+#9 1343.3   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/31/7d/164b7ffc8624fe9efb4221bf9af485d5c1e41b9ae118045d2b6dc5457d8b/click-8.5.1-py3-none-any.whl (126 kB)
+#9 1343.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 473.5 kB/s eta 0:00:00
+#9 1347.2 Collecting h11>=0.8 (from uvicorn>=0.29->-r requirements.txt (line 4))
+#9 1347.3   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl (37 kB)
+#9 1356.7 Collecting charset_normalizer<4,>=2 (from requests>=2.31->-r requirements.txt (line 5))
+#9 1357.1   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e4/ed/cf505d3011ffceb12c2067a7a5d3cfe92b875d4d44bb0ff0d69375e2c184/charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (269 kB)
+#9 1359.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 270.0/270.0 kB 137.0 kB/s eta 0:00:00
+#9 1364.3 Collecting idna<4,>=2.5 (from requests>=2.31->-r requirements.txt (line 5))
+#9 1364.5   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl (69 kB)
+#9 1364.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 264.8 kB/s eta 0:00:00
+#9 1369.5 Collecting urllib3<3,>=1.26 (from requests>=2.31->-r requirements.txt (line 5))
+#9 1369.6   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl (135 kB)
+#9 1370.3      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 203.4 kB/s eta 0:00:00
+#9 1376.2 Collecting certifi>=2023.5.7 (from requests>=2.31->-r requirements.txt (line 5))
+#9 1376.4   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl (135 kB)
+#9 1377.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.1/135.1 kB 105.0 kB/s eta 0:00:00
+#9 1377.6 Requirement already satisfied: filelock in /usr/local/lib/python3.11/site-packages (from torch>=2.0->-r requirements.txt (line 7)) (4.2.12)
+#9 1377.6 Requirement already satisfied: networkx in /usr/local/lib/python3.11/site-packages (from torch>=2.0->-r requirements.txt (line 7)) (3.6.1)
+#9 1377.6 Requirement already satisfied: jinja2 in /usr/local/lib/python3.11/site-packages (from torch>=2.0->-r requirements.txt (line 7)) (3.1.6)
+#9 1377.6 Requirement already satisfied: fsspec in /usr/local/lib/python3.11/site-packages (from torch>=2.0->-r requirements.txt (line 7)) (2026.9.0)
+#9 1377.6 Requirement already satisfied: sympy==1.13.1 in /usr/local/lib/python3.11/site-packages (from torch>=2.0->-r requirements.txt (line 7)) (1.13.1)
+#9 1377.7 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.11/site-packages (from sympy==1.13.1->torch>=2.0->-r requirements.txt (line 7)) (1.3.0)
+#9 1386.9 Collecting contourpy>=1.0.1 (from matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1387.2   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5f/4b/6157f24ca425b89fe2eb7e7be642375711ab671135be21e6faa100f7448c/contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+#9 1390.3      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 355.2/355.2 kB 113.3 kB/s eta 0:00:00
+#9 1393.8 Collecting cycler>=0.10 (from matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1393.9   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#9 1405.4 Collecting fonttools>=4.28.2 (from matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1405.5   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/00/01/e0f5b3d648ddd2eae35c4bcddcc2cffc059279e9d2cdb325bed10458f606/fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+#9 1420.0      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 380.8 kB/s eta 0:00:00
+#9 1426.4 Collecting kiwisolver>=1.3.1 (from matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1426.5   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/89/00/05c2d0369ac322d22d5c05f84b5c4a6856fa6207fbae42869108a28f0383/kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+#9 1428.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 644.8 kB/s eta 0:00:00
+#9 1428.7 Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib>=3.8->-r requirements.txt (line 8)) (26.3)
+#9 1435.8 Collecting pillow>=9 (from matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1435.9   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/36/46/f509b74787f40ce0627501089d630b2c741b63b244c1f40b640b3b01e181/pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+#9 1442.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 1.0 MB/s eta 0:00:00
+#9 1446.4 Collecting pyparsing>=3 (from matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1446.5   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/38/bb/d215ee7c73b61497b28a5503f9f53523f294fcc936762b7caf90e0c1c2b5/pyparsing-3.3.3-py3-none-any.whl (126 kB)
+#9 1446.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 509.3 kB/s eta 0:00:00
+#9 1449.1 Collecting python-dateutil>=2.7 (from matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1449.2   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/2f/a9/52b89563d154433d79b51ed1eb4842bf7334cb2696891a7fe135618853d7/python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+#9 1449.4      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 472.1 kB/s eta 0:00:00
+#9 1451.8 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi>=0.110->-r requirements.txt (line 3))
+#9 1451.9   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#9 1462.7 Collecting pydantic-core==2.50.4 (from pydantic>=2.9.0->fastapi>=0.110->-r requirements.txt (line 3))
+#9 1463.1   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/56/51/cbb7a1bc0196ff94d3478d265eed7449f811759988eb760d41f4edd0893b/pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#9 1466.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 669.7 kB/s eta 0:00:00
+#9 1469.9 Collecting tzdata (from python-dateutil>=2.7->matplotlib>=3.8->-r requirements.txt (line 8))
+#9 1470.0   Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0a/66/9a06c2227fedfd4919f0eaaa8b94377d9730882a7e4f95823c9a331ab5e1/tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#9 1470.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 541.7 kB/s eta 0:00:00
+#9 1470.8 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.11/site-packages (from jinja2->torch>=2.0->-r requirements.txt (line 7)) (3.0.4)
+#9 1471.3 Installing collected packages: watchdog, urllib3, tzdata, typing-inspection, pyparsing, pydantic-core, pillow, opentelemetry-api, numpy, kiwisolver, idna, h11, fonttools, cycler, click, charset_normalizer, certifi, annotated-types, annotated-doc, uvicorn, requests, python-dateutil, pydantic, contourpy, anyio, starlette, matplotlib, fastapi
+#9 1481.7 Successfully installed annotated-doc-0.0.7 annotated-types-0.8.0 anyio-4.16.0 certifi-2026.10.23 charset_normalizer-3.5.2 click-8.5.1 contourpy-1.3.3 cycler-0.12.1 fastapi-0.165.0 fonttools-4.68.0 h11-0.16.0 idna-3.20 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.4.6 opentelemetry-api-1.45.2 pillow-13.0.0 pydantic-2.14.3 pydantic-core-2.50.4 pyparsing-3.3.3 python-dateutil-4.0.0 requests-2.34.2 starlette-1.10.0 typing-inspection-0.4.5 tzdata-2026.6 urllib3-2.8.0 uvicorn-0.54.0 watchdog-7.1.0
+#9 1481.7 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 1484.6 
+#9 1484.6 [notice] A new release of pip is available: 24.0 -> 26.3
+#9 1484.6 [notice] To update, run: pip install --upgrade pip
+#9 DONE 1485.9s
+
+#9 [backup 4/5] RUN pip install --no-cache-dir "torch==2.6.0+cpu"         --find-links https://mirrors.aliyun.com/pytorch-wheels/cpu  && pip install --no-cache-dir -r requirements.txt
+#9 DONE 1485.9s
+
+#10 [backup 5/5] COPY . .
+#10 DONE 0.5s
+
+#10 [backup 5/5] COPY . .
+#10 DONE 0.5s
+
+#11 [backup] exporting to image
+#11 exporting layers
+#11 ...
+
+#12 [app] exporting to image
+#12 exporting layers 56.4s done
+#12 exporting manifest sha256:3867b3f5b2b028b01166f370495397b59c9a00ee2d55ccf7d16c826b52906c82 0.0s done
+#12 exporting config sha256:6209e29495069e3b9aaac4a33fb7866f6048bf143ebdb4ffd9c8fc04f5a09e49 0.0s done
+#12 exporting attestation manifest sha256:da5fe51c6a2c9197f94f90054076bb305f9a2f76f58d069de3dea367d04a6f40
+#12 ...
+
+#11 [backup] exporting to image
+#11 exporting layers 56.4s done
+#11 exporting manifest sha256:91afd9a352d380f49f2df1e986957e5424164ffabeae9401002a986f4d7de27c 0.0s done
+#11 exporting config sha256:58d7de21c4e2af9624231d6b3c98482896937455f8e7a98242c325c155861557 0.0s done
+#11 exporting attestation manifest sha256:8e0d043864f7947d1ad669ef0caa8dfb4cd93f9ce7603f4ee1a4de9fbe4e1591
+#11 exporting attestation manifest sha256:8e0d043864f7947d1ad669ef0caa8dfb4cd93f9ce7603f4ee1a4de9fbe4e1591 0.0s done
+#11 exporting manifest list sha256:fcf230bc59b6a8b687a9aa7666404c1b45cdcb11d0c78850949f3e6534ba397a 0.0s done
+#11 naming to docker.io/library/medqa:1.0.0 done
+#11 unpacking to docker.io/library/medqa:1.0.0
+#11 ...
+
+#12 [app] exporting to image
+#12 exporting attestation manifest sha256:da5fe51c6a2c9197f94f90054076bb305f9a2f76f58d069de3dea367d04a6f40 0.0s done
+#12 exporting manifest list sha256:85b9ac6e1d688b35d7cc250ecf7413a7716ec344ac97f073da1ac1033bbd0b6d 0.0s done
+#12 naming to docker.io/library/medqa:1.0.0 done
+#12 unpacking to docker.io/library/medqa:1.0.0 19.8s done
+#12 DONE 76.5s
+
+#11 [backup] exporting to image
+#11 unpacking to docker.io/library/medqa:1.0.0 19.9s done
+#11 DONE 76.5s
+
+#13 [app] resolving provenance for metadata file
+#13 DONE 0.0s
+
+#14 [backup] resolving provenance for metadata file
+#14 DONE 0.0s
+ Image medqa:1.0.0 Built 
+ Image medqa:1.0.0 Built 

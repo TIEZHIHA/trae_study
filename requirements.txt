@@ -1,4 +1,5 @@
---extra-index-url https://download.pytorch.org/whl/cpu
+# torch 的 CPU wheel 由构建环境提供索引（见 Dockerfile 的 PIP_EXTRA_INDEX_URL），
+# 容器内使用阿里云 pytorch-wheels 镜像，避免直连 download.pytorch.org 超时。
 fastapi>=0.110
 uvicorn>=0.29
 requests>=2.31

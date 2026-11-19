@@ -1,0 +1,27 @@
+﻿docker :  Network medqa_default Creating 
+所在位置 行:18 字符: 1
++ docker compose up -d --wait 2>&1 | Tee-Object -FilePath "evidence\doc ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( Network medqa_default Creating :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ Volume medqa_medqa-data Creating 
+ Volume medqa_medqa-data Creating 
+ Network medqa_default Creating 
+ Volume medqa_medqa-data Created 
+ Volume medqa_medqa-data Created 
+ Network medqa_default Created 
+ Network medqa_default Created 
+ Container medqa_app Creating 
+ Container medqa_app Created 
+ Container medqa_backup Creating 
+ Container medqa_backup Created 
+ Container medqa_app Starting 
+ Container medqa_app Error response from daemon: failed to set up container networking: driver failed programming exter
+nal connectivity on endpoint medqa_app (d95d4a7954ad52192cca692294d36282ff0c1cc2fbe9deec92f0083158fbcbc0): Bind for 0.0
+.0.0:8000 failed: port is already allocated 
+ Container medqa_backup not started: condition "service_healthy" of service "app" not reached: interrupted by the failu
+re of Container medqa_app 
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on e
+ndpoint medqa_app (d95d4a7954ad52192cca692294d36282ff0c1cc2fbe9deec92f0083158fbcbc0): Bind for 0.0.0.0:8000 failed: por
+t is already allocated

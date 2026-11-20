@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """题库自动生成：从图谱自动产出问句 + 标准答案，作为回归验证集。"""
 from schema import (
-    INTENT_ASK_CHECK, INTENT_ASK_DRUG, INTENT_ASK_PREVENT, INTENT_ASK_SYMPTOM,
-    TEMPLATES,
+    INTENT_ASK_CHECK, INTENT_ASK_DRUG, INTENT_ASK_PREVENT, INTENT_ASK_SOLUTION,
+    INTENT_ASK_SYMPTOM, SOLUTION_INTRO, TEMPLATES,
 )
 import storage
 
@@ -37,6 +37,20 @@ def generate_for_record(record):
     return added
 
 
+def generate_solution_items(limit=8):
+    """为高频症状生成「XX怎么办」，覆盖症状驱动的反向查询。"""
+    added = 0
+    for sym in storage.symptoms_with_diseases(limit):
+        diseases = [r["disease"] for r in storage.diseases_by_symptom(sym)]
+        if not diseases:
+            continue
+        question = f"{sym}怎么办"
+        answer = SOLUTION_INTRO.format(entity=sym, diseases="、".join(diseases))
+        if storage.qb_add(question, answer, INTENT_ASK_SOLUTION, sym):
+            added += 1
+    return added
+
+
 def generate_all():
     """从 clean_kb 全量重生成题库（幂等：已存在问句跳过）。"""
     import json
@@ -45,4 +59,5 @@ def generate_all():
     total = 0
     for r in rows:
         total += generate_for_record(json.loads(r["record"]))
+    total += generate_solution_items()
     return total

@@ -204,6 +204,30 @@ def query_facts(entity, rel):
     return [dict(r) for r in rows]
 
 
+def diseases_by_symptom(symptom):
+    """反向查询：症状 -> 可能疾病。底层仍是 Disease -HAS_SYMPTOM-> Symptom 的正向边。"""
+    conn = get_conn()
+    rows = conn.execute(
+        """SELECT src_name, source FROM edges
+           WHERE rel='HAS_SYMPTOM' AND dst_label='Symptom' AND dst_name=?
+           ORDER BY src_name""",
+        (symptom,),
+    ).fetchall()
+    return [{"disease": r["src_name"], "source": r["source"]} for r in rows]
+
+
+def symptoms_with_diseases(limit=8):
+    """图谱中关联疾病最多的症状，供题库自动生成症状驱动问句。"""
+    conn = get_conn()
+    rows = conn.execute(
+        """SELECT dst_name, COUNT(*) AS c FROM edges
+           WHERE rel='HAS_SYMPTOM' AND dst_label='Symptom'
+           GROUP BY dst_name ORDER BY c DESC, dst_name LIMIT ?""",
+        (limit,),
+    ).fetchall()
+    return [r["dst_name"] for r in rows]
+
+
 def all_names():
     """返回 [(name, label, canonical)]，供实体词典使用（别名指向规范名）。"""
     conn = get_conn()

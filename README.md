@@ -26,11 +26,14 @@ data/inbox/*.md + 网页采集
 用户提问
   → qa_service.preprocess       预处理
   → segment.pick_disease        双向最大匹配 + 启发式择优
-  → qa_service.classify         规则意图（4 类实现 + 5 类待扩展）
+  → qa_service.classify         规则意图（5 类实现 + 5 类待扩展）
   → models.predict              规则未命中时由 BiLSTM / TextCNN 补位
-  → storage.query_facts         参数化查询
+  → storage.query_facts         参数化查询（症状驱动走反向查询）
   → schema.TEMPLATES            模板答案 + 安全提示
 ```
+
+症状驱动的反向查询：输入「咳嗽怎么办」时，先由 `storage.diseases_by_symptom`
+反查可能疾病，再取这些疾病的用药与预防，按「疾病 → 药物 → 护理」分段回答。
 
 ## 四级兜底
 

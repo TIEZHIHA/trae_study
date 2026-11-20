@@ -41,6 +41,8 @@ INTENT_ASK_DRUG = "ask_drug"
 INTENT_ASK_SYMPTOM = "ask_symptom"
 INTENT_ASK_CHECK = "ask_check"
 INTENT_ASK_PREVENT = "ask_prevent"
+# 症状驱动：输入症状 -> 可能疾病 -> 用药 / 护理（图谱中为反向查询）
+INTENT_ASK_SOLUTION = "ask_solution"
 
 # 待扩展意图（给出扩展路径，不静默缺失）
 INTENT_PENDING = {
@@ -63,6 +65,9 @@ INTENT_RELATION = {
 # 顺序敏感：先匹配更具体的意图，避免「怎么预防」被判成「用药」。
 INTENT_RULES = [
     (INTENT_ASK_PREVENT, ["预防", "怎么防", "如何防", "避免", "要注意什么", "注意什么"]),
+    # 症状应对放在用药之前：「咳嗽怎么办」应走症状驱动，而不是用药咨询
+    (INTENT_ASK_SOLUTION, ["怎么办", "怎么处理", "如何缓解", "怎么缓解", "如何改善",
+                           "怎么改善", "怎么应对", "有什么办法"]),
     (INTENT_ASK_CHECK, ["检查", "化验", "查什么", "做什么检测", "诊断方法"]),
     (INTENT_ASK_SYMPTOM, ["症状", "表现", "有哪些不适", "什么感觉"]),
     (INTENT_ASK_DRUG, ["吃什么药", "用药", "药物", "药品", "吃什么", "开什么药", "用什么药"]),
@@ -94,14 +99,20 @@ TEMPLATES = {
     INTENT_ASK_PREVENT: "针对「{entity}」，可参考的预防措施有：{items}。",
 }
 
+# 症状驱动的分段文案：疾病 / 用药 / 护理分开拼，避免把不同关系混成一句
+SOLUTION_INTRO = "出现「{entity}」在图谱中可能关联的疾病有：{diseases}。"
+SOLUTION_DRUGS = "这些疾病记录的常用药物：{items}。"
+SOLUTION_PREVENT = "可参考的预防与护理：{items}。"
+
 # 安全提示：每条答案必带
 SAFETY_NOTE = "以上内容来自知识图谱的既有记录，仅供健康科普参考，不能替代医生面诊与处方。"
 
 # 四类兜底文案
 MSG_EMPTY = "知识图谱中未查询到与「{entity}」相关的{rel_cn}信息，暂不提供推测性回答。"
-MSG_CLARIFY = "没能准确识别您问的疾病或问题类型，请补充具体疾病名称，例如“风热感冒吃什么药”。"
+MSG_CLARIFY = "没能准确识别您问的疾病或症状，请补充具体名称，例如“风热感冒吃什么药”或“咳嗽怎么办”。"
 MSG_SAFETY = "该问题涉及较高健康风险，建议立即前往医院就诊或拨打急救电话，本系统不做自行用药建议。"
 MSG_PENDING = "「{intent_cn}」属于第二版扩展能力，当前版本暂未开放。扩展路径：{path}。"
+MSG_EMPTY_SOLUTION = "知识图谱中暂无与症状「{entity}」关联的疾病记录，暂不提供推测性回答，建议就医确认。"
 
 # 待扩展意图的中文名
 PENDING_CN = {
@@ -118,5 +129,6 @@ INTENT_CN = {
     "ask_symptom": "症状咨询",
     "ask_check": "检查咨询",
     "ask_prevent": "预防咨询",
+    "ask_solution": "症状应对",
     **PENDING_CN,
 }

@@ -149,6 +149,7 @@ def demo_cases():
             {"label": "正常·症状", "question": "风热感冒有哪些症状", "expect": "ok"},
             {"label": "正常·检查", "question": "高血压需要做什么检查", "expect": "ok"},
             {"label": "正常·预防", "question": "怎么预防2型糖尿病", "expect": "ok"},
+            {"label": "症状应对", "question": "咳嗽怎么办", "expect": "ok"},
             # 急性胃炎语料刻意不含“检查”小节，用来演示“空结果不编造”
             {"label": "空结果", "question": "急性胃炎需要做什么检查", "expect": "empty"},
             {"label": "低置信度", "question": "那个东西能不能吃", "expect": "clarify"},

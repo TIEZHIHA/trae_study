@@ -16,9 +16,11 @@ import time
 import config
 import storage
 from schema import (
+    INTENT_ASK_DRUG, INTENT_ASK_PREVENT, INTENT_ASK_SOLUTION,
     INTENT_CN, INTENT_PENDING, INTENT_RELATION, INTENT_RULES, MSG_CLARIFY, MSG_EMPTY,
-    MSG_PENDING, MSG_SAFETY, PENDING_CN, PENDING_RULES, REL_CN, RISK_KEYWORDS,
-    SAFETY_NOTE, TEMPLATES,
+    MSG_EMPTY_SOLUTION, MSG_PENDING, MSG_SAFETY, PENDING_CN, PENDING_RULES, REL_CN,
+    RISK_KEYWORDS, SAFETY_NOTE, SOLUTION_DRUGS, SOLUTION_INTRO, SOLUTION_PREVENT,
+    TEMPLATES,
 )
 from segment import build_dict, pick_disease
 
@@ -113,6 +115,56 @@ def build_evidence(entity, intent, facts):
     ]
 
 
+def _answer_solution(question, symptom, ner_conf, intent_conf, timings, t0, trace, meta):
+    """症状驱动答案：反向查可能疾病，再取这些疾病的用药与护理。"""
+    t = time.perf_counter()
+    rows = storage.diseases_by_symptom(symptom)
+    timings["query"] = round((time.perf_counter() - t) * 1000, 2)
+    trace.append({"step": "4.route", "relation": "HAS_SYMPTOM(reverse)"})
+    query = {
+        "engine": "sqlite",
+        "sql": "SELECT src_name FROM edges WHERE rel='HAS_SYMPTOM' "
+               "AND dst_label='Symptom' AND dst_name=?",
+        "params": ["Symptom", symptom],
+        "cypher": "MATCH (d:Disease)-[:HAS_SYMPTOM]->(s:Symptom {name:$symptom}) "
+                  "RETURN d.name, d.source",
+        "rows": len(rows),
+    }
+    if not rows:
+        return _finish(question, symptom, INTENT_ASK_SOLUTION, "empty",
+                       MSG_EMPTY_SOLUTION.format(entity=symptom),
+                       ner_conf, intent_conf, timings, "图谱无结果", t0,
+                       trace=trace, query=query, confidence_meta=meta)
+
+    diseases = [r["disease"] for r in rows]
+    drugs, prevents = [], []
+    for d in diseases:
+        for f in query_facts(d, INTENT_ASK_DRUG):
+            if f["dst_name"] not in drugs:
+                drugs.append(f["dst_name"])
+        for f in query_facts(d, INTENT_ASK_PREVENT):
+            if f["dst_name"] not in prevents:
+                prevents.append(f["dst_name"])
+
+    parts = [SOLUTION_INTRO.format(entity=symptom, diseases="、".join(diseases))]
+    if drugs:
+        parts.append(SOLUTION_DRUGS.format(items="、".join(drugs[:8])))
+    if prevents:
+        parts.append(SOLUTION_PREVENT.format(items="、".join(prevents[:6])))
+    answer = "".join(parts) + SAFETY_NOTE
+
+    evidence = [
+        {"path": f"({r['disease']}:Disease)-[:HAS_SYMPTOM]->({symptom}:Symptom)",
+         "source": r.get("source", "")}
+        for r in rows
+    ]
+    trace.append({"step": "6.answer", "status": "ok", "chars": len(answer)})
+    return _finish(question, symptom, INTENT_ASK_SOLUTION, "ok", answer,
+                   ner_conf, intent_conf, timings, "命中", t0,
+                   evidence=evidence, items=diseases, trace=trace, query=query,
+                   confidence_meta=meta)
+
+
 def _model_entity(question, model):
     """模型实体识别 + 词典校验（不认识的实体一律丢弃）。"""
     if not model:
@@ -152,6 +204,16 @@ def ask(question):
     ner_source = "rule" if entity else "-"
     if not entity and m_entity:
         entity, ner_conf, ner_source = m_entity["canonical"], m_entity["conf"], "model"
+
+    # 没有疾病实体时，先记下症状实体；等意图判定后再决定是否改走症状应对
+    symptom, symptom_conf = None, 0.0
+    if not entity:
+        syms = [e for e in entities if e[0] == "Symptom"]
+        if syms:
+            syms.sort(key=lambda x: (-(x[4] - x[3]), x[3]))
+            _, canonical, surface, _, _ = syms[0]
+            symptom = canonical
+            symptom_conf = round(min(1.0, len(surface) / max(2, len(canonical))), 2)
     timings["ner"] = round((time.perf_counter() - t1) * 1000, 2)
     trace.append({
         "step": "2.ner", "entity": entity, "confidence": ner_conf,
@@ -170,6 +232,13 @@ def ask(question):
         "step": "3.intent", "intent": intent, "confidence": intent_conf,
         "source": intent_source,
     })
+
+    # 症状驱动：只有症状、没有疾病，且意图为空/用药 -> 改走症状应对
+    if symptom and not entity and intent in (None, INTENT_ASK_DRUG, INTENT_ASK_SOLUTION):
+        entity, ner_conf, ner_source = symptom, symptom_conf, "rule-symptom"
+        intent, intent_conf, intent_source = INTENT_ASK_SOLUTION, 0.96, "rule-symptom"
+        trace.append({"step": "3b.redirect", "intent": intent, "entity": entity,
+                      "reason": "症状驱动"})
 
     # ---- 4. 医学安全优先：高风险问题直接给就医建议，不进入查询
     # 说明：方案里 safety 是第 3 级兜底，但演示用例「孕妇胸闷气短怎么办」没有疾病实体，
@@ -211,7 +280,14 @@ def ask(question):
                        trace=trace, confidence_meta={"ner_source": ner_source,
                                                      "intent_source": intent_source})
 
-    # ---- 7. 关系路由 + 图谱查询
+    # ---- 7. 症状驱动：症状 -> 可能疾病 -> 用药 / 护理
+    if intent == INTENT_ASK_SOLUTION:
+        return _answer_solution(
+            q, entity, ner_conf, intent_conf, timings, t0, trace,
+            {"ner_source": ner_source, "intent_source": intent_source},
+        )
+
+    # ---- 8. 关系路由 + 图谱查询
     rel = INTENT_RELATION.get(intent)
     trace.append({"step": "4.route", "relation": rel})
     t3 = time.perf_counter()

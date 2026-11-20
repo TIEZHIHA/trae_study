@@ -2,6 +2,7 @@ name: macos-verify
 
 # 在 macOS runner 上跑一次完整启动 + 验证，把含 Darwin 的日志提交回仓库，
 # 用于补齐 V5 跨平台证据（本地只有 Windows）。
+# 触发：修改本文件或手动 workflow_dispatch。
 on:
   push:
     paths:

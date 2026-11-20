@@ -4,7 +4,7 @@ D1,D1-2 目录树结构,1,PART,0.6,根目录平铺，未采用 src/ 子目录（
 D1,D1-3 元数据 id/name/scheme,1,PASS,1.0,26215150425/王茂麒/A
 D1,D1-4 元数据时间/仓库/备注,1,PASS,1.0,齐全
 D1,D1-5 必交 1–4 项,2,PASS,2.0,齐备
-D1,D1-6 必交 5–8 项,2,PASS,2.0,脚本齐全，证据 17 份
+D1,D1-6 必交 5–8 项,2,PASS,2.0,脚本齐全，证据 18 份
 D1,D1-7 无 .env 与真实密钥,1,PASS,1.0,无 .env
 D1,D1-8 无模型权重/数据库卷,1,PASS,1.0,无权重与库卷
 D2,D2-1 up.sh 存在,1,PASS,1.0,up.sh
@@ -14,10 +14,10 @@ D2,D2-4 macOS up 实跑,1.5,WEAK,0.45,sh 脚本齐备，未在 macOS 实跑
 D2,D2-5 Windows up 实跑,1.5,PASS,1.5,服务在线
 D2,D2-6 V1–V8,4,PART,2.4,"7/8 PASS：{'V1': 'PASS', 'V2': 'PASS', 'V3': 'PASS', 'V4': 'PASS', 'V5': 'SKIP', 'V6': 'PASS', 'V7': 'PASS', 'V8': 'PASS'}"
 D2,D2-7 S1–S4,1,PASS,1.0,4 项静态检查
-D2,D2-8 down→up 数据恢复,3,PASS,3.0,重连前后 126/126 -> 126/126
+D2,D2-8 down→up 数据恢复,3,PASS,3.0,重连前后 127/128 -> 127/128
 D3,A1 采集/解析/清洗,6,PASS,6.0,"['PASS', 'PASS']"
 D3,A2 分词与词典,4,PASS,4.0,分词=感冒药物治疗 -> 感冒/药物/治疗 资产=4/4
-D3,A3 建图,8,PASS,8.0,二次新增=0 方向异常=0 唯一索引=True 节点=126
+D3,A3 建图,8,PASS,8.0,二次新增=0 方向异常=0 唯一索引=True 节点=127
 D3,A4 模型训练,6,PASS,6.0,best_f1=1.0 曲线最大=1.0 curves.png=True
 D3,A5 问答链路,6,PASS,6.0,8 条用例全中，参数化查询=True
 D4,D4-1 目录监听,1,PASS,1.0,watcher=True last=
@@ -25,7 +25,7 @@ D4,D4-2 接口触发,1,PASS,1.0,scanned=7
 D4,D4-3 定时同步,1,PART,0.6,interval=10min（未等满一个周期，按设计给档）
 D4,D4-4 重复同步不增,3,PASS,3.0,二次新增=0
 D4,D4-5 增量处理,1,PASS,1.0,doc_id=sha256(相对路径+内容)
-D4,D4-6 stats 四项,1,PASS,1.0,"{'inbox_files': 7, 'docs_processed': 7, 'questions': 35}"
+D4,D4-6 stats 四项,1,PASS,1.0,"{'inbox_files': 7, 'docs_processed': 9, 'questions': 36}"
 D4,D4-7 审核开关,1,PASS,1.0,KB_REQUIRE_REVIEW -> pending
 D4,D4-8 同步日志,1,PASS,1.0,"['added', 'elapsed_ms', 'invalid', 'pending', 'questions', 'scanned', 'skipped', 'time']"
 D5,D5-1 定时配置,2,PART,1.2,BACKUP_CRON_HOUR=3（宿主常驻线程，未跨天实跑）
@@ -37,7 +37,7 @@ D6,D6-1/2/3 网页六区块,4,PASS,4.0,"{'状态灯': True, '答案与status': T
 D6,D6-4 PWA,2,PASS,2.0,icons=3 display=standalone
 D6,D6-5 移动端壳,3,PART,1.8,PWA 壳调三接口；未编译原生 APK
 D6,D6-6 必演用例,3,PASS,3.0,9 条符合预期
-D6,D6-7 Trae 留痕,3,PASS,3.0,evidence/18 份
+D6,D6-7 Trae 留痕,3,PASS,3.0,evidence/19 份
 D7,D7-1 结构与常量,3,PASS,3.0,schema.py 集中定义关系/意图/模板
 D7,D7-2 配置与密钥隔离,2,PASS,2.0,环境变量覆盖，无硬编码密钥
 D7,D7-3 文档完整性,2,PASS,2.0,方案四部分 + NOTES

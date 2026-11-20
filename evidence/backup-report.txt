@@ -1,7 +1,7 @@
-备份时间: 2026-11-20 15:00:37
+备份时间: 2026-11-20 15:04:54
 状态: dry_run
 文件数: 62
 敏感命中: 0
-产物: backup-20261120-150037.tar.gz
-快照: {"question_bank": 35, "nodes": 126, "edges": 126}
+产物: backup-20261120-150454.tar.gz
+快照: {"question_bank": 36, "nodes": 127, "edges": 128}
 DRY_RUN: True

@@ -590,5 +590,13 @@
  "记录头痛日记": {
   "label": "Prevent",
   "canonical": "记录头痛日记"
+ },
+ "发热": {
+  "label": "Symptom",
+  "canonical": "发热"
+ },
+ "发烧": {
+  "label": "Symptom",
+  "canonical": "发热"
  }
 }

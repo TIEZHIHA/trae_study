@@ -68,6 +68,7 @@ Disease,急性胃炎,PREVENTS,Prevent,避免刺激性食物,D:\C\医药问答系
 Disease,风寒感冒,HAS_DRUG,Drug,感冒清热颗粒,D:\C\医药问答系统\data\inbox\风寒感冒.md
 Disease,风寒感冒,HAS_DRUG,Drug,正柴胡饮颗粒,D:\C\医药问答系统\data\inbox\风寒感冒.md
 Disease,风寒感冒,HAS_DRUG,Drug,风寒感冒颗粒,D:\C\医药问答系统\data\inbox\风寒感冒.md
+Disease,风寒感冒,HAS_SYMPTOM,Symptom,发热,D:\C\医药问答系统\data\inbox\风寒感冒.md
 Disease,风寒感冒,HAS_SYMPTOM,Symptom,发热轻,D:\C\医药问答系统\data\inbox\风寒感冒.md
 Disease,风寒感冒,HAS_SYMPTOM,Symptom,口不渴,D:\C\医药问答系统\data\inbox\风寒感冒.md
 Disease,风寒感冒,HAS_SYMPTOM,Symptom,咳嗽吐稀白痰,D:\C\医药问答系统\data\inbox\风寒感冒.md
@@ -86,6 +87,7 @@ Disease,风热感冒,HAS_DRUG,Drug,双黄连口服液,D:\C\医药问答系统\da
 Disease,风热感冒,HAS_DRUG,Drug,板蓝根颗粒,D:\C\医药问答系统\data\inbox\风热感冒.md
 Disease,风热感冒,HAS_DRUG,Drug,桑菊感冒片,D:\C\医药问答系统\data\inbox\风热感冒.md
 Disease,风热感冒,HAS_DRUG,Drug,银翘解毒片,D:\C\医药问答系统\data\inbox\风热感冒.md
+Disease,风热感冒,HAS_SYMPTOM,Symptom,发热,D:\C\医药问答系统\data\inbox\风热感冒.md
 Disease,风热感冒,HAS_SYMPTOM,Symptom,发热重,D:\C\医药问答系统\data\inbox\风热感冒.md
 Disease,风热感冒,HAS_SYMPTOM,Symptom,口渴喜饮,D:\C\医药问答系统\data\inbox\风热感冒.md
 Disease,风热感冒,HAS_SYMPTOM,Symptom,咳嗽,D:\C\医药问答系统\data\inbox\风热感冒.md

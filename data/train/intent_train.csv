@@ -43,6 +43,7 @@ II型糖尿病要化验什么,ask_check
 II型糖尿病要治多久,ask_cycle
 II型糖尿病要注意什么,ask_prevent
 II型糖尿病需要做什么检查,ask_check
+上腹痛怎么办,ask_solution
 不寐做什么检测,ask_check
 不寐吃什么药,ask_drug
 不寐多久能好,ask_cycle
@@ -68,6 +69,7 @@ II型糖尿病需要做什么检查,ask_check
 乌灵胶囊和二甲双胍有相互作用吗,ask_interaction
 乌灵胶囊和二甲双胍能一起吃吗,ask_interaction
 乌灵胶囊能一起用吗,ask_interaction
+乏力怎么办,ask_solution
 二型糖尿病做什么检测,ask_check
 二型糖尿病吃什么药,ask_drug
 二型糖尿病多久能好,ask_cycle
@@ -111,9 +113,11 @@ II型糖尿病需要做什么检查,ask_check
 会不会是风热感冒,ask_possible_disease
 会不会是高血压,ask_possible_disease
 会不会是高血压病,ask_possible_disease
+伤口愈合慢怎么办,ask_solution
 佐米曲普坦和双黄连口服液有相互作用吗,ask_interaction
 佐米曲普坦和双黄连口服液能一起吃吗,ask_interaction
 佐米曲普坦能一起用吗,ask_interaction
+体重下降怎么办,ask_solution
 你好,other
 你是谁,other
 偏头痛做什么检测,ask_check
@@ -138,6 +142,8 @@ II型糖尿病需要做什么检查,ask_check
 偏头痛要治多久,ask_cycle
 偏头痛要注意什么,ask_prevent
 偏头痛需要做什么检查,ask_check
+入睡困难怎么办,ask_solution
+单侧搏动性头痛怎么办,ask_solution
 原发性高血压做什么检测,ask_check
 原发性高血压吃什么药,ask_drug
 原发性高血压多久能好,ask_cycle
@@ -307,6 +313,7 @@ II型糖尿病需要做什么检查,ask_check
 急性胃炎要治多久,ask_cycle
 急性胃炎要注意什么,ask_prevent
 急性胃炎需要做什么检查,ask_check
+恶心怎么办,ask_solution
 感冒清热颗粒和板蓝根颗粒有相互作用吗,ask_interaction
 感冒清热颗粒和板蓝根颗粒能一起吃吗,ask_interaction
 感冒清热颗粒能一起用吗,ask_interaction
@@ -422,6 +429,7 @@ II型糖尿病需要做什么检查,ask_check
 西格列汀和铝碳酸镁有相互作用吗,ask_interaction
 西格列汀和铝碳酸镁能一起吃吗,ask_interaction
 西格列汀能一起用吗,ask_interaction
+视物模糊怎么办,ask_solution
 谢谢,other
 这两种药同服会冲突吗,ask_interaction
 这些症状可能是什么病,ask_possible_disease

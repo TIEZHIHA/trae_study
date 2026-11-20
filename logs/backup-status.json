@@ -1,5 +1,5 @@
 {
-  "time": "2026-11-20 14:58:09",
+  "time": "2026-11-20 15:00:37",
   "files": 62,
   "snapshot": {
     "question_bank": 35,
@@ -9,6 +9,6 @@
   "hits": 0,
   "hit_details": [],
   "dry_run": true,
-  "package": "backup-20261120-145809.tar.gz",
+  "package": "backup-20261120-150037.tar.gz",
   "status": "dry_run"
 }

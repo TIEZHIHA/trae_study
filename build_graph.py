@@ -66,4 +66,6 @@ def rebuild_from_clean():
         s = merge_record(record)
         for k in total:
             total[k] += s[k]
+    from schema import SYMPTOM_ALIASES
+    storage.ensure_symptom_aliases(SYMPTOM_ALIASES)
     return total

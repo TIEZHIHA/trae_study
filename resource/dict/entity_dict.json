@@ -43,7 +43,19 @@
   "label": "Symptom",
   "canonical": "体重下降"
  },
+ "体重减轻": {
+  "label": "Symptom",
+  "canonical": "体重下降"
+ },
  "乏力": {
+  "label": "Symptom",
+  "canonical": "乏力"
+ },
+ "没力气": {
+  "label": "Symptom",
+  "canonical": "乏力"
+ },
+ "浑身没劲": {
   "label": "Symptom",
   "canonical": "乏力"
  },
@@ -115,7 +127,15 @@
   "label": "Symptom",
   "canonical": "入睡困难"
  },
+ "睡不着": {
+  "label": "Symptom",
+  "canonical": "入睡困难"
+ },
  "睡眠浅": {
+  "label": "Symptom",
+  "canonical": "睡眠浅"
+ },
+ "睡不好": {
   "label": "Symptom",
   "canonical": "睡眠浅"
  },
@@ -207,7 +227,19 @@
   "label": "Symptom",
   "canonical": "食欲不振"
  },
+ "没胃口": {
+  "label": "Symptom",
+  "canonical": "食欲不振"
+ },
+ "吃不下饭": {
+  "label": "Symptom",
+  "canonical": "食欲不振"
+ },
  "腹胀": {
+  "label": "Symptom",
+  "canonical": "腹胀"
+ },
+ "肚子胀": {
   "label": "Symptom",
   "canonical": "腹胀"
  },
@@ -367,6 +399,10 @@
   "label": "Symptom",
   "canonical": "口渴喜饮"
  },
+ "口渴": {
+  "label": "Symptom",
+  "canonical": "口渴喜饮"
+ },
  "咽拭子培养": {
   "label": "Check",
   "canonical": "咽拭子培养"
@@ -427,7 +463,15 @@
   "label": "Symptom",
   "canonical": "头晕"
  },
+ "头昏": {
+  "label": "Symptom",
+  "canonical": "头晕"
+ },
  "头痛": {
+  "label": "Symptom",
+  "canonical": "头痛"
+ },
+ "头疼": {
   "label": "Symptom",
   "canonical": "头痛"
  },
@@ -440,6 +484,10 @@
   "canonical": "疲劳"
  },
  "心悸": {
+  "label": "Symptom",
+  "canonical": "心悸"
+ },
+ "心慌": {
   "label": "Symptom",
   "canonical": "心悸"
  },

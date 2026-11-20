@@ -31,6 +31,7 @@ import runtime
 import storage
 from backup.backup import last_status, run_backup
 from kb import auto_add
+from schema import SYMPTOM_ALIASES
 from segment import build_dict
 
 START_TS = time.time()
@@ -54,6 +55,7 @@ async def lifespan(app: FastAPI):
     storage.init_db()
     if storage.graph_stats()["nodes"] == 0:
         auto_add.sync_once()      # 首次启动自动把 data/inbox 的语料入库
+    storage.ensure_symptom_aliases(SYMPTOM_ALIASES)   # 症状口语同义词写入图谱
     build_dict(force=True)
     qa_service.warmup()           # 模型预加载，避免首个请求承担加载耗时
     runtime.start()               # 目录监听 + 定时同步 + 定时备份

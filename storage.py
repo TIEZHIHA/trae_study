@@ -228,6 +228,30 @@ def symptoms_with_diseases(limit=8):
     return [r["dst_name"] for r in rows]
 
 
+def ensure_symptom_aliases(mapping):
+    """把口语同义词追加到症状节点的 alias 字段，幂等；规范名不存在则跳过。"""
+    conn = get_conn()
+    added = 0
+    for alias, canonical in mapping.items():
+        row = conn.execute(
+            "SELECT alias FROM nodes WHERE label='Symptom' AND name=?", (canonical,)
+        ).fetchone()
+        if not row:
+            continue
+        parts = [p.strip() for p in (row["alias"] or "").replace("，", ",").split(",")
+                 if p.strip()]
+        if alias in parts:
+            continue
+        parts.append(alias)
+        conn.execute(
+            "UPDATE nodes SET alias=? WHERE label='Symptom' AND name=?",
+            (",".join(parts), canonical),
+        )
+        added += 1
+    conn.commit()
+    return added
+
+
 def all_names():
     """返回 [(name, label, canonical)]，供实体词典使用（别名指向规范名）。"""
     conn = get_conn()

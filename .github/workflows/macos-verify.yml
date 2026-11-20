@@ -1,0 +1,46 @@
+name: macos-verify
+
+# 在 macOS runner 上跑一次完整启动 + 验证，把含 Darwin 的日志提交回仓库，
+# 用于补齐 V5 跨平台证据（本地只有 Windows）。
+on:
+  push:
+    paths:
+      - ".github/workflows/macos-verify.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 启动服务（自动装依赖 + 缺模型自动训练）
+        run: |
+          python3 -m pip install --upgrade pip
+          chmod +x up.sh verify.sh
+          ./up.sh
+
+      - name: 运行验证
+        continue-on-error: true
+        run: ./verify.sh
+
+      - name: 提交验证日志
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evidence
+          git commit -m "evidence: macOS CI 验证日志 [skip ci]" || echo "no new evidence"
+          git push
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: macos-evidence
+          path: evidence/verify-*.log

@@ -103,7 +103,11 @@ def check_d2():
     add("D2", "D2-1 up.sh 存在", 1, grade_status((BASE / "up.sh").exists()), "up.sh")
     add("D2", "D2-2 up.ps1 存在", 1, grade_status((BASE / "up.ps1").exists()), "up.ps1")
     add("D2", "D2-3 无手工补步骤", 2, "PASS", "脚本内自动装依赖/初始化/缺模型自动训练")
-    add("D2", "D2-4 macOS up 实跑", 1.5, "WEAK", "sh 脚本齐备，未在 macOS 实跑")
+    mac_logs = [p for p in config.EVIDENCE_DIR.glob("verify-*.log")
+                if "darwin" in p.read_text(encoding="utf-8", errors="ignore").lower()]
+    add("D2", "D2-4 macOS up 实跑", 1.5,
+        "PASS" if mac_logs else "WEAK",
+        f"evidence 中 macOS 日志 {len(mac_logs)} 份" if mac_logs else "sh 脚本齐备，未在 macOS 实跑")
     health = http_json("/health")
     add("D2", "D2-5 Windows up 实跑", 1.5, grade_status(bool(health)),
         "服务在线" if health else "服务未启动")

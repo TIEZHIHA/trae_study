@@ -153,6 +153,30 @@ def mark_doc(doc_id, path):
     conn.commit()
 
 
+def doc_by_path(path):
+    """按文件路径查已登记的 doc_id，用于语料内容变更后的替换。"""
+    conn = get_conn()
+    row = conn.execute("SELECT doc_id FROM doc_registry WHERE path=?", (path,)).fetchone()
+    return row["doc_id"] if row else None
+
+
+def remove_doc(doc_id):
+    """删除某版本文档的登记、原始与清洗记录（图中的残留由全量重建清掉）。"""
+    conn = get_conn()
+    for sql in ("DELETE FROM clean_kb WHERE doc_id=?",
+                "DELETE FROM raw_kb WHERE doc_id=?",
+                "DELETE FROM doc_registry WHERE doc_id=?"):
+        conn.execute(sql, (doc_id,))
+    conn.commit()
+
+
+def qb_delete_entity(entity):
+    """语料更新时清掉该实体的旧问句，避免题库保留过期答案。"""
+    conn = get_conn()
+    conn.execute("DELETE FROM question_bank WHERE entity=?", (entity,))
+    conn.commit()
+
+
 # ---------------------------------------------------------------- 图谱
 def merge_node(label, name, alias="", desc="", source="clean_kb"):
     """MERGE 语义：按 (label, name) 去重；已存在则补全空字段，不重复插入。"""

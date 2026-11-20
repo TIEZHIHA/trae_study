@@ -55,10 +55,18 @@ def merge_record(record):
     return stats
 
 
-def rebuild_from_clean():
-    """从 clean_kb 全量重建图谱（等价于重跑建图，用于验证幂等/修复）。"""
+def rebuild_from_clean(truncate=False):
+    """从 clean_kb 全量重建图谱（等价于重跑建图，用于验证幂等/修复）。
+
+    truncate=True 时先清空节点与关系，用于语料内容变更后的替换，
+    避免旧版本中已删除的关系残留在图里。
+    """
     import json
     conn = storage.get_conn()
+    if truncate:
+        conn.execute("DELETE FROM nodes")
+        conn.execute("DELETE FROM edges")
+        conn.commit()
     rows = conn.execute("SELECT doc_id, record FROM clean_kb").fetchall()
     total = {"nodes_added": 0, "edges_added": 0, "skipped_empty": 0}
     for r in rows:

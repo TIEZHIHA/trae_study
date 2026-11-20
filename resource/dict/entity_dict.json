@@ -263,174 +263,6 @@
   "label": "Prevent",
   "canonical": "慎用损伤胃黏膜的药物"
  },
- "风寒感冒": {
-  "label": "Disease",
-  "canonical": "风寒感冒"
- },
- "风寒型感冒": {
-  "label": "Disease",
-  "canonical": "风寒感冒"
- },
- "感冒清热颗粒": {
-  "label": "Drug",
-  "canonical": "感冒清热颗粒"
- },
- "正柴胡饮颗粒": {
-  "label": "Drug",
-  "canonical": "正柴胡饮颗粒"
- },
- "风寒感冒颗粒": {
-  "label": "Drug",
-  "canonical": "风寒感冒颗粒"
- },
- "恶寒重": {
-  "label": "Symptom",
-  "canonical": "恶寒重"
- },
- "发热轻": {
-  "label": "Symptom",
-  "canonical": "发热轻"
- },
- "无汗": {
-  "label": "Symptom",
-  "canonical": "无汗"
- },
- "头痛身痛": {
-  "label": "Symptom",
-  "canonical": "头痛身痛"
- },
- "鼻塞流清涕": {
-  "label": "Symptom",
-  "canonical": "鼻塞流清涕"
- },
- "咳嗽吐稀白痰": {
-  "label": "Symptom",
-  "canonical": "咳嗽吐稀白痰"
- },
- "口不渴": {
-  "label": "Symptom",
-  "canonical": "口不渴"
- },
- "血常规": {
-  "label": "Check",
-  "canonical": "血常规"
- },
- "C反应蛋白": {
-  "label": "Check",
-  "canonical": "C反应蛋白"
- },
- "注意保暖": {
-  "label": "Prevent",
-  "canonical": "注意保暖"
- },
- "避免受凉": {
-  "label": "Prevent",
-  "canonical": "避免受凉"
- },
- "热水泡脚": {
-  "label": "Prevent",
-  "canonical": "热水泡脚"
- },
- "适量饮用姜汤": {
-  "label": "Prevent",
-  "canonical": "适量饮用姜汤"
- },
- "规律作息": {
-  "label": "Prevent",
-  "canonical": "规律作息"
- },
- "风热感冒": {
-  "label": "Disease",
-  "canonical": "风热感冒"
- },
- "风热型感冒": {
-  "label": "Disease",
-  "canonical": "风热感冒"
- },
- "热感冒": {
-  "label": "Disease",
-  "canonical": "风热感冒"
- },
- "银翘解毒片": {
-  "label": "Drug",
-  "canonical": "银翘解毒片"
- },
- "桑菊感冒片": {
-  "label": "Drug",
-  "canonical": "桑菊感冒片"
- },
- "板蓝根颗粒": {
-  "label": "Drug",
-  "canonical": "板蓝根颗粒"
- },
- "双黄连口服液": {
-  "label": "Drug",
-  "canonical": "双黄连口服液"
- },
- "发热重": {
-  "label": "Symptom",
-  "canonical": "发热重"
- },
- "微恶风": {
-  "label": "Symptom",
-  "canonical": "微恶风"
- },
- "头胀痛": {
-  "label": "Symptom",
-  "canonical": "头胀痛"
- },
- "咽喉红肿疼痛": {
-  "label": "Symptom",
-  "canonical": "咽喉红肿疼痛"
- },
- "咳嗽": {
-  "label": "Symptom",
-  "canonical": "咳嗽"
- },
- "痰黏或黄": {
-  "label": "Symptom",
-  "canonical": "痰黏或黄"
- },
- "鼻塞黄涕": {
-  "label": "Symptom",
-  "canonical": "鼻塞黄涕"
- },
- "口渴喜饮": {
-  "label": "Symptom",
-  "canonical": "口渴喜饮"
- },
- "口渴": {
-  "label": "Symptom",
-  "canonical": "口渴喜饮"
- },
- "咽拭子培养": {
-  "label": "Check",
-  "canonical": "咽拭子培养"
- },
- "多饮温水": {
-  "label": "Prevent",
-  "canonical": "多饮温水"
- },
- "饮食清淡": {
-  "label": "Prevent",
-  "canonical": "饮食清淡"
- },
- "少吃辛辣油腻": {
-  "label": "Prevent",
-  "canonical": "少吃辛辣油腻"
- },
- "保证充足休息": {
-  "label": "Prevent",
-  "canonical": "保证充足休息"
- },
- "保持室内通风": {
-  "label": "Prevent",
-  "canonical": "保持室内通风"
- },
- "流感高发季戴口罩": {
-  "label": "Prevent",
-  "canonical": "流感高发季戴口罩"
- },
  "高血压": {
   "label": "Disease",
   "canonical": "高血压"
@@ -579,6 +411,10 @@
   "label": "Check",
   "canonical": "头颅磁共振"
  },
+ "规律作息": {
+  "label": "Prevent",
+  "canonical": "规律作息"
+ },
  "避免熬夜": {
   "label": "Prevent",
   "canonical": "避免熬夜"
@@ -591,6 +427,30 @@
   "label": "Prevent",
   "canonical": "记录头痛日记"
  },
+ "风寒感冒": {
+  "label": "Disease",
+  "canonical": "风寒感冒"
+ },
+ "风寒型感冒": {
+  "label": "Disease",
+  "canonical": "风寒感冒"
+ },
+ "感冒清热颗粒": {
+  "label": "Drug",
+  "canonical": "感冒清热颗粒"
+ },
+ "正柴胡饮颗粒": {
+  "label": "Drug",
+  "canonical": "正柴胡饮颗粒"
+ },
+ "风寒感冒颗粒": {
+  "label": "Drug",
+  "canonical": "风寒感冒颗粒"
+ },
+ "恶寒重": {
+  "label": "Symptom",
+  "canonical": "恶寒重"
+ },
  "发热": {
   "label": "Symptom",
   "canonical": "发热"
@@ -598,5 +458,145 @@
  "发烧": {
   "label": "Symptom",
   "canonical": "发热"
+ },
+ "发热轻": {
+  "label": "Symptom",
+  "canonical": "发热轻"
+ },
+ "无汗": {
+  "label": "Symptom",
+  "canonical": "无汗"
+ },
+ "头痛身痛": {
+  "label": "Symptom",
+  "canonical": "头痛身痛"
+ },
+ "鼻塞流清涕": {
+  "label": "Symptom",
+  "canonical": "鼻塞流清涕"
+ },
+ "咳嗽吐稀白痰": {
+  "label": "Symptom",
+  "canonical": "咳嗽吐稀白痰"
+ },
+ "口不渴": {
+  "label": "Symptom",
+  "canonical": "口不渴"
+ },
+ "血常规": {
+  "label": "Check",
+  "canonical": "血常规"
+ },
+ "C反应蛋白": {
+  "label": "Check",
+  "canonical": "C反应蛋白"
+ },
+ "注意保暖": {
+  "label": "Prevent",
+  "canonical": "注意保暖"
+ },
+ "避免受凉": {
+  "label": "Prevent",
+  "canonical": "避免受凉"
+ },
+ "热水泡脚": {
+  "label": "Prevent",
+  "canonical": "热水泡脚"
+ },
+ "适量饮用姜汤": {
+  "label": "Prevent",
+  "canonical": "适量饮用姜汤"
+ },
+ "风热感冒": {
+  "label": "Disease",
+  "canonical": "风热感冒"
+ },
+ "风热型感冒": {
+  "label": "Disease",
+  "canonical": "风热感冒"
+ },
+ "热感冒": {
+  "label": "Disease",
+  "canonical": "风热感冒"
+ },
+ "银翘解毒片": {
+  "label": "Drug",
+  "canonical": "银翘解毒片"
+ },
+ "桑菊感冒片": {
+  "label": "Drug",
+  "canonical": "桑菊感冒片"
+ },
+ "板蓝根颗粒": {
+  "label": "Drug",
+  "canonical": "板蓝根颗粒"
+ },
+ "双黄连口服液": {
+  "label": "Drug",
+  "canonical": "双黄连口服液"
+ },
+ "发热重": {
+  "label": "Symptom",
+  "canonical": "发热重"
+ },
+ "微恶风": {
+  "label": "Symptom",
+  "canonical": "微恶风"
+ },
+ "头胀痛": {
+  "label": "Symptom",
+  "canonical": "头胀痛"
+ },
+ "咽喉红肿疼痛": {
+  "label": "Symptom",
+  "canonical": "咽喉红肿疼痛"
+ },
+ "咳嗽": {
+  "label": "Symptom",
+  "canonical": "咳嗽"
+ },
+ "痰黏或黄": {
+  "label": "Symptom",
+  "canonical": "痰黏或黄"
+ },
+ "鼻塞黄涕": {
+  "label": "Symptom",
+  "canonical": "鼻塞黄涕"
+ },
+ "口渴喜饮": {
+  "label": "Symptom",
+  "canonical": "口渴喜饮"
+ },
+ "口渴": {
+  "label": "Symptom",
+  "canonical": "口渴喜饮"
+ },
+ "咽拭子培养": {
+  "label": "Check",
+  "canonical": "咽拭子培养"
+ },
+ "多饮温水": {
+  "label": "Prevent",
+  "canonical": "多饮温水"
+ },
+ "饮食清淡": {
+  "label": "Prevent",
+  "canonical": "饮食清淡"
+ },
+ "少吃辛辣油腻": {
+  "label": "Prevent",
+  "canonical": "少吃辛辣油腻"
+ },
+ "保证充足休息": {
+  "label": "Prevent",
+  "canonical": "保证充足休息"
+ },
+ "保持室内通风": {
+  "label": "Prevent",
+  "canonical": "保持室内通风"
+ },
+ "流感高发季戴口罩": {
+  "label": "Prevent",
+  "canonical": "流感高发季戴口罩"
  }
 }

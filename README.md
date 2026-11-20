@@ -92,6 +92,9 @@ py -3 -m backup.daemon                # 独立备份守护（容器里用）
 
 `## 症状 / ## 检查 / ## 预防` 同理。丢进 `data/inbox/` 后 1.5 秒内被目录监听捕获；重复投放不重复入图（`doc_id=sha256(相对路径+内容)`）。
 
+同一文件内容变更时按路径识别为新版本：旧版本登记与清洗记录被删除，图谱按 `clean_kb` 全量重建，
+旧关系不会残留（同步详情里状态为 `updated`），历史版本不会在 `clean_kb` 里越攒越多。
+
 审核模式：`KB_REQUIRE_REVIEW=true` 时先入 `pending_kb`，调用 `/admin/kb/approve` 才进图谱。
 
 ## 备份与安全

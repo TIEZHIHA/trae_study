@@ -17,7 +17,7 @@ from datetime import datetime
 from pathlib import Path
 
 import config
-from build_graph import merge_record
+from build_graph import merge_record, rebuild_from_clean
 from clean import parse_document, validate_record
 from kb import question_bank
 from segment import build_dict
@@ -61,29 +61,45 @@ def _read_text(path):
 
 
 def process_file(path, require_review=None):
-    """处理单个文件，返回 (状态, 详情)。状态：added / pending / skipped / invalid。"""
+    """处理单个文件，返回 (状态, 详情)。状态：added / updated / pending / skipped / invalid。"""
     require_review = config.KB_REQUIRE_REVIEW if require_review is None else require_review
+    path_str = str(path)
     doc_id = make_doc_id(path)
+    prev_id = storage.doc_by_path(path_str)
     if storage.doc_exists(doc_id):
         return "skipped", {"doc_id": doc_id, "reason": "已入库"}
 
     text = _read_text(path)
-    storage.save_raw(doc_id, str(path), text)  # 原始永久保留
+    storage.save_raw(doc_id, path_str, text)  # 原始永久保留
 
-    record = parse_document(text, source=str(path))
+    record = parse_document(text, source=path_str)
     ok, reason = validate_record(record)
     if not ok:
         return "invalid", {"doc_id": doc_id, "reason": reason}
 
     # 审核模式：先入 pending 队列，人工确认后再入图
     if require_review:
-        storage.save_pending(doc_id, str(path), record)
+        storage.save_pending(doc_id, path_str, record)
         return "pending", {"doc_id": doc_id, "name": record["name"], "reason": "等待人工审核"}
 
     storage.save_clean(doc_id, record)
+    storage.mark_doc(doc_id, path_str)
+
+    # 同一文件内容变更：删旧版本记录后全量重建，旧关系不会残留
+    if prev_id and prev_id != doc_id:
+        storage.remove_doc(prev_id)
+        storage.qb_delete_entity(record["name"])
+        rebuild_from_clean(truncate=True)
+        questions = question_bank.generate_for_record(record)
+        return "updated", {
+            "doc_id": doc_id,
+            "name": record["name"],
+            "replaced": prev_id[:8],
+            "questions": questions,
+        }
+
     stats = merge_record(record)
     questions = question_bank.generate_for_record(record)
-    storage.mark_doc(doc_id, str(path))
 
     return "added", {
         "doc_id": doc_id,
@@ -111,13 +127,13 @@ def sync_once(inbox=None):
     """一次完整同步，返回统计。可重复执行，数量不翻倍。"""
     with _SYNC_LOCK:
         started = time.perf_counter()
-        stats = {"scanned": 0, "added": 0, "pending": 0, "skipped": 0,
+        stats = {"scanned": 0, "added": 0, "updated": 0, "pending": 0, "skipped": 0,
                  "invalid": 0, "questions": 0, "details": []}
         for path in iter_files(inbox):
             stats["scanned"] += 1
             status, info = process_file(path)
-            if status == "added":
-                stats["added"] += 1
+            if status in ("added", "updated"):
+                stats[status] += 1
                 stats["questions"] += info.get("questions", 0)
             elif status == "pending":
                 stats["pending"] += 1
@@ -164,6 +180,7 @@ def _write_log(stats):
         "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "scanned": stats["scanned"],
         "added": stats["added"],
+        "updated": stats.get("updated", 0),
         "pending": stats.get("pending", 0),
         "skipped": stats["skipped"],
         "invalid": stats["invalid"],

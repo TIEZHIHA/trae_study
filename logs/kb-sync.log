@@ -110,3 +110,13 @@
 {"time": "2026-11-20 15:04:50", "scanned": 7, "added": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 6.93}
 {"time": "2026-11-20 15:04:54", "scanned": 7, "added": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 10.22}
 {"time": "2026-11-20 15:04:54", "scanned": 7, "added": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 10.04}
+{"time": "2026-11-20 15:06:47", "scanned": 7, "added": 0, "updated": 1, "pending": 0, "skipped": 6, "invalid": 0, "questions": 4, "elapsed_ms": 172.88}
+{"time": "2026-11-20 15:06:47", "scanned": 7, "added": 0, "updated": 1, "pending": 0, "skipped": 6, "invalid": 0, "questions": 4, "elapsed_ms": 153.04}
+{"time": "2026-11-20 15:07:33", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 9.86}
+{"time": "2026-11-20 15:07:33", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 6.07}
+{"time": "2026-11-20 15:07:39", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 9.43}
+{"time": "2026-11-20 15:07:39", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 6.93}
+{"time": "2026-11-20 15:07:39", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 6.58}
+{"time": "2026-11-20 15:07:39", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 6.56}
+{"time": "2026-11-20 15:07:42", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 9.88}
+{"time": "2026-11-20 15:07:42", "scanned": 7, "added": 0, "updated": 0, "pending": 0, "skipped": 7, "invalid": 0, "questions": 0, "elapsed_ms": 8.59}
